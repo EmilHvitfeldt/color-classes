@@ -1,31 +1,81 @@
 ---
 title: "Color-classes Example"
 format:
-  revealjs: default
-revealjs-plugins:
-  - color-classes
+  revealjs: 
+    theme: 
+      - default
+      - styles.scss
+      - _extensions/color-classes/color-classes.scss
+footer: <https://github.com/EmilHvitfeldt/quarto-color-classes>
 ---
 
-# In the morning
+## Text Colors
 
-## Getting up
+This [text]{.text-yellow} is yellow
 
-- Turn off alarm
-- Get out of bed
+````md
+This [text]{.text-yellow} is yellow
+````
 
-## Breakfast
+This [background]{.bg-red} is red
 
-- Eat eggs
-- Drink coffee
+````md
+This [background]{.bg-red} is red
+````
 
-# In the evening
+This [word]{.text-yellow .bg-red} is both
 
-## Dinner
+````md
+This [word]{.text-yellow .bg-red} is both
+````
 
-- Eat spaghetti
-- Drink wine
+## decorations
 
-## Going to sleep
+For text decorations you will need to specify the [text decoration](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration) seperately without using `text-decoration`. Instead you should be using [text-decoration-line](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-line), [text-decoration-style](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-style), and [text-decoration-thickness](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-thickness).
 
-- Get in bed
-- Count sheep
+<br>
+
+Text decorators make [words pop]{.decoration-yellow style="text-decoration-line: underline;"} 
+
+````md
+Text decorators make [words pop]{.decoration-yellow style="text-decoration-line: underline;"} 
+````
+
+## Outlines and borders
+
+Outlines and borders work the way way as decorations does. You will likely need to add 
+
+<br>
+
+
+[border]{.border-red style="border-style: dotted; border-width: 10px;"}
+
+````md
+[border]{.border-red style="border-style: dotted; border-width: 10px;"}
+````
+
+[outline]{.outline-blue style="outline-style: groove; outline-width: 10px;"}
+
+````md
+[outline]{.outline-blue style="outline-style: groove; outline-width: 10px;"}
+````
+
+## SVGs
+
+::: {.columns}
+::: {.column}
+
+
+[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="max-width:50%;"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M512 240c0 132.5-114.6 240-256 240-37.1 0-72.3-7.4-104.1-20.7L33.5 510.1c-9.4 4-20.2 1.7-27.1-5.8S-2 485.8 2.8 476.8l48.8-92.2C19.2 344.3 0 294.3 0 240 0 107.5 114.6 0 256 0S512 107.5 512 240z"/></svg>]{.fill-green}
+
+`{.fill-green}`
+
+:::
+::: {.column}
+
+[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="max-width:50%;"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M512 240c0 132.5-114.6 240-256 240-37.1 0-72.3-7.4-104.1-20.7L33.5 510.1c-9.4 4-20.2 1.7-27.1-5.8S-2 485.8 2.8 476.8l48.8-92.2C19.2 344.3 0 294.3 0 240 0 107.5 114.6 0 256 0S512 107.5 512 240z"/></svg>]{.stroke-blue .fill-white style="stroke-width: 5px;"}
+
+`{.stroke-blue .fill-white style="stroke-width: 5px;"}`
+
+:::
+:::

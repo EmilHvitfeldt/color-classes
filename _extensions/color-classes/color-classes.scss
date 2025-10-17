@@ -1,13 +1,33 @@
 /*-- scss:rules --*/
 
 @if variable-exists(colors) {
-@each $name, $color in $colors {
-  .bg-#{$name} {
-    background-color: $color;
-  }
+  @each $name, $color in $colors {
+    .bg-#{$name} {
+      background-color: $color;
+    }
 
-  .text-#{$name} {
-    color: $color;
+    .text-#{$name} {
+      color: $color;
+    }
+
+    .decoration-#{$name} {
+      text-decoration-color: $color;
+    }
+
+    .border-#{$name} {
+      border-color: $color;
+    }
+
+    .outline-#{$name} {
+      outline-color: $color;
+    }
+
+    .fill-#{$name} * {
+      fill: $color !important;
+    }
+
+    .stroke-#{$name} * {
+      stroke: $color !important;
+    }
   }
-}
 }
