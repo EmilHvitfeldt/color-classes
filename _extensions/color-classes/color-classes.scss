@@ -1,0 +1,13 @@
+/*-- scss:rules --*/
+
+@if variable-exists(colors) {
+@each $name, $color in $colors {
+  .bg-#{$name} {
+    background-color: $color;
+  }
+
+  .text-#{$name} {
+    color: $color;
+  }
+}
+}
